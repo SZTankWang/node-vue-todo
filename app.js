@@ -32,7 +32,9 @@ const uri = "mongodb+srv://zhenmingwang:sfls2012101@cluster0.mgy0es3.mongodb.net
 const client = new MongoClient(uri);
 
 
-
+app.post("/api/hello",(req,res)=>{
+    res.send("hello world!");
+})
 
 
 app.post("/login",(req,res)=>{

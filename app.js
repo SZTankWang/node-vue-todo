@@ -37,7 +37,7 @@ app.get("/api/hello",(req,res)=>{
 })
 
 
-app.post("/login",(req,res)=>{
+app.post("/api/login",(req,res)=>{
     //username
     // console.log(req.body);
     let username = req.body.username;
@@ -78,7 +78,7 @@ app.post("/login",(req,res)=>{
 
 })
 
-app.post("/addToDo",(req,res)=>{
+app.post("/api/addToDo",(req,res)=>{
     let taskName = req.body.task;
     let username = req.body.user;
     client.connect()
@@ -99,7 +99,7 @@ app.post("/addToDo",(req,res)=>{
     });
 })
 
-app.get("/getToDo",(req,res)=>{
+app.get("/api/getToDo",(req,res)=>{
     let username = req.query.name;
     client.connect()
     .then((res)=>{
@@ -120,7 +120,7 @@ app.get("/getToDo",(req,res)=>{
 
 })
 
-app.post("/removeToDo",(req,res)=>{
+app.post("/api/removeToDo",(req,res)=>{
     client.connect()
     .then((resolve)=>{
         return removeToDo(client,req.body.task,req.body.name);
